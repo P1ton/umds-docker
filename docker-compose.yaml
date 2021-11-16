@@ -1,0 +1,11 @@
+version: '3'
+services:
+  web:
+    #image: nginx:alpine
+    build: ./
+    restart: always
+    volumes:
+      - ./nginx/data:/usr/share/nginx/html/umds
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
+    ports:
+      - 5486:8001
